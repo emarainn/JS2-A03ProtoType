@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeple | Meeples</title>
+
+    <!-- Bootstrap CSS -->
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+    crossorigin="anonymous">
+    
+</head>
+<body>
+    <!-- Nav Bar-->
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #A49494;">
+        <div class="container">
+            <!-- Meeple Logo -->
+            <a href="index.html" class="navbar-brand h1">
+                <img class="d-inline-block align-top"
+                    src="media/meepleLogo.png" 
+                    height="50" width="50" />
+            </a>
+
+            <button 
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" 
+                class="navbar-toggler"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+                <span class="navbar-toggle-icon"></span>
+            </button>
+
+            <div 
+            class="collapse navbar-collapse justify-content-end" 
+            id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link px-4">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="meetHooman.html" class="nav-link px-4"> 
+                            Meet Hooman
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="meeples.html" class="nav-link active px-4"> 
+                            Meeples
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="logIn.html" class="nav-link px-4"> 
+                            Log In
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Meeples Pic and Description Info -->
+    <div class="container my-4">
+        <div class="col">
+            <img src="media/meepleLogo.png" class="rounded float-start bg-dark me-5 mt-1"
+            height="200" width="200" />
+        </div>
+        <div class="col">
+            <div class="container" style="max-width: 80000px; max-height: 19rem;">
+                <div class="container-header fs-2">What are meeples?</div>
+                <div class="container-body fs-5 mt-3">
+                    <p>*Meeples* are Hooman's friends! They are all made with the purpose of helping Hooman. 
+                        This is done through helping in school, making new friends, dealing with big 
+                        feelings, or even having a lazy day. Meeples have a...</p> 
+                    <p>Name, Age, Role (what they were made to do), Location they were 
+                        found, different strengths and weaknesses.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- tabs : view, add, edit-->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <!-- tabs view/add/edit-->
+                    <ul class="nav nav-tabs mt-5">
+                        <div class="col-4">
+                            <li class="nav-item"><a class="nav-link fs-4 fw-bold active" href="#view" data-bs-toggle="tab">View Meeples</a></li>
+                        </div>
+                        <div class="col-4">
+                        <li class="nav-item"><a class="nav-link fs-4 fw-bold" href="#add" data-bs-toggle="tab">Add Meeple</a></li>
+                        </div>
+                        <div class="col-4">
+                            <li class="nav-item"><a class="nav-link fs-4 fw-bold" href="#edit" data-bs-toggle="tab">Edit Meeple</a></li>
+                        </div>
+                    </ul>
+
+                    <!-- view meeples -->
+                    <div class="tab-content mx-3">
+                        <div id="view" class="active tab-pane fade in show mt-4">
+                            <div class="row">
+                                <!-- filter search -->
+                                <div class="col-sm-12 col-md-3">
+                                    <label for="filterSearch" 
+                                    class="form-label">Filtered Search</label>
+                                    <select class="form-control bg-body-secondary" 
+                                    id="name">
+                                        <option value="Choose">Choose...</option>
+                                        <option value="Role">Role</option>
+                                        <option value="Location">Location</option>
+                                        <option value="Age">Age</option>
+                                        <option value="Newest">Newest</option>
+                                        <option value="Oldest">Oldest</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-0 col-md-6"></div>
+                                <!-- search -->
+                                <div class="col-sm-12 col-md-3">
+                                    <label for="searchMeeples" 
+                                    class="form-label">Search Meeples</label>
+                                    <input type="text" 
+                                    class="form-control bg-body-secondary" id="searchMeeples" 
+                                    placeholder="Search">
+                                </div>
+                                <hr class="my-2">
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <p class="fw-bold">ID</p>
+                                </div>
+                                <div class="col-sm-1 col-md-3">
+                                    <p class="fw-bold">Name</p>
+                                </div>
+                                <div class="col-sm-1 col-md-3">
+                                    <p class="fw-bold">Role</p>
+                                </div>
+                                <div class="col-sm-1 col-md-3">
+                                    <p class="fw-bold">Location Found</p>
+                                </div>
+                                <div class="col-sm-1 col-md-2">
+                                    <p class="fw-bold">Date Added</p>
+                                </div>
+                                <hr class="mb-3">
+                            </div>
+                            <!-- example meeple -->
+                                <!-- 1. I know this shouldn't be hard coded
+                                    2. I would want to loop through it like 
+                                        we did in class with the check list demo
+                                        so that I could have it desplay better on mobile -->
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <p>1</p>
+                                    <p>2</p>
+                                    <p>3</p>
+                                    <p>4</p>
+                                </div>
+                                <div class="col-sm-1 col-md-3 fw-bold">
+                                    <p>Zero</p>
+                                    <p>June</p>
+                                    <p>Jenny</p>
+                                    <p>Alex</p>
+                                </div>
+                                <div class="col-sm-1 col-md-3">
+                                    <p>Education</p>
+                                    <p>Emotions</p>
+                                    <p>Socialization</p>
+                                    <p>Creativity</p>
+                                </div>
+                                <div class="col-sm-1 col-md-3">
+                                    <p>School</p>
+                                    <p>Home</p>
+                                    <p>Work</p>
+                                    <p>Home</p>
+                                </div>
+                                <div class="col-sm-1 col-md-2">
+                                    <p>09 / 12 / 2018</p>
+                                    <p>10 / 22 / 2022</p>
+                                    <p>11 / 16 / 2023</p>
+                                    <p>09 / 06 / 2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- add meeple -->
+                    <div class="tab-content mx-3">
+                        <div id="add" class="tab-pane fade mt-4">
+                            <!-- row 1 : name & location found -->
+                            <div class="row">
+                                <!-- name / nickname -->
+                                <div class="col-sm-12 col-md-6">
+                                    <label for="name" 
+                                    class="form-label">Name or Nickname</label>
+                                    <input type="text" 
+                                    class="form-control bg-body-secondary" id="name" 
+                                    placeholder="Enter Name/Nickname"
+                                    required autofocus>
+                                </div>
+
+                                <!-- location found -->
+                                <div class="col-sm-12 col-md-6">
+                                    <label for="locationFound" 
+                                    class="form-label">Location Found</label>
+                                    <input type="text" 
+                                    class="form-control bg-body-secondary" id="locationFound" 
+                                    placeholder="Enter Location"
+                                    required autofocus>
+                                </div>
+                            </div>
+
+                            <!-- row 2 : role & age-->
+                            <div class="row">
+                                <!-- role -->
+                                <div class="col-6 mt-3">
+                                    <label for="role" 
+                                    class="form-label">Role</label>
+                                    <select class="form-control bg-body-secondary" 
+                                    id="name">
+                                        <option value="Choose">Choose...</option>
+                                        <option value="Choose">Chores</option>
+                                        <option value="Communication">Communication</option>
+                                        <option value="Education">Education</option>
+                                        <option value="Emotions">Emotions</option>
+                                        <option value="Home Life">Home Life</option>
+                                        <option value="Socialization">Socialization</option>                                        
+                                        <option value="Work">Work</option>
+                                    </select>
+                                </div>
+
+                                <!-- age -->
+                                <div class="col-6 mt-3">
+                                    <label for="age" 
+                                    class="form-label">Enter Age</label>
+                                    <input type="text" 
+                                    class="form-control bg-body-secondary" id="age" 
+                                    placeholder="Enter Age"
+                                    required autofocus>
+                                </div>
+
+                            </div>
+
+                            <!-- row 3 : cards of strength/weaknesses-->
+                            <div class="row mt-4 mx-1">
+
+                                <div class="card bg-light">
+                                    <div class="card-header bg-light px-1">
+                                        <!-- tabs : strengths & weaknesses -->
+                                        <ul class="nav nav-tabs card-header-tabs">
+                                            <div class="col-6">
+                                                <li class="nav-item px-1"><a class="nav-link fs-4 active" href="#strengths" data-bs-toggle="tab">Strengths</a></li>
+                                            </div>
+                                            <div class="col-6">
+                                            <li class="nav-item px-1"><a class="nav-link fs-4" href="#weaknesses" data-bs-toggle="tab">Weaknesses</a></li>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body bg-white">
+                                        <!-- strengths info -->
+                                        <div class="tab-content mx-1">
+                                            <div id="strengths" class="active tab-pane fade in show mt-1">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <ul>
+                                                            <input type="checkbox" value="communication" id="communication">
+                                                            <label for="communication" class="form-check-label">Communication</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="socialization" id="socialization">
+                                                            <label for="socialization" class="form-check-label">Socialization</label>  
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="creativity" id="creativity">
+                                                            <label for="creativity" class="form-check-label">Creativity</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="organization" id="organization">
+                                                            <label for="organization" class="form-check-label">Organization</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="difficultConvo" id="difficultConvo">
+                                                            <label for="difficultConvo" class="form-check-label">Difficult Conversations</label>
+                                                        </ul>
+                                                    </div>
+    
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <ul>
+                                                            <input type="checkbox" value="cleaning" id="cleaning">
+                                                            <label for="cleaning" class="form-check-label">Cleaning</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="journaling" id="journaling">
+                                                            <label for="journaling" class="form-check-label">Journaling</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="painting" id="painting">
+                                                            <label for="painting" class="form-check-label">Painting</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="school" id="school">
+                                                            <label for="school" class="form-check-label">School</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="coding" id="coding">
+                                                            <label for="coding" class="form-check-label">Coding</label>
+                                                        </ul>
+                                                    </div>
+    
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <ul>
+                                                            <input type="checkbox" value="feelings" id="feelings">
+                                                            <label for="feelings" class="form-check-label">Big Feelings</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="speaking" id="speaking">
+                                                            <label for="speaking" class="form-check-label">Public Speaking</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="stubborn" id="stubborn">
+                                                            <label for="stubborn" class="form-check-label">Being Stubborn</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="cooking" id="cooking">
+                                                            <label for="cooking" class="form-check-label">Cooking</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="reflection" id="reflection">
+                                                            <label for="reflection" class="form-check-label">Self Reflection</label>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <ul>
+                                                            <input type="checkbox" value="grounding" id="grounding">
+                                                            <label for="grounding" class="form-check-label">Grounding</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="sympathy" id="sympathy">
+                                                            <label for="sympathy" class="form-check-label">Sympathy</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="humor" id="humor">
+                                                            <label for="humor" class="form-check-label">Humor</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="finances" id="finances">
+                                                            <label for="finances" class="form-check-label">Finances</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="recall" id="recall">
+                                                            <label for="recall" class="form-check-label">Information Recall</label>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- weaknesses info -->
+                                        <div class="tab-content mx-1">
+                                            <div id="weaknesses" class="tab-pane fade mt-1">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <ul>
+                                                            <input type="checkbox" value="communication" id="communication">
+                                                            <label for="communication" class="form-check-label">Communication</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="socialization" id="socialization">
+                                                            <label for="socialization" class="form-check-label">Socialization</label>  
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="creativity" id="creativity">
+                                                            <label for="creativity" class="form-check-label">Creativity</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="organization" id="organization">
+                                                            <label for="organization" class="form-check-label">Organization</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="difficultConvo" id="difficultConvo">
+                                                            <label for="difficultConvo" class="form-check-label">Difficult Conversations</label>
+                                                        </ul>
+                                                    </div>
+    
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <ul>
+                                                            <input type="checkbox" value="cleaning" id="cleaning">
+                                                            <label for="cleaning" class="form-check-label">Cleaning</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="journaling" id="journaling">
+                                                            <label for="journaling" class="form-check-label">Journaling</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="painting" id="painting">
+                                                            <label for="painting" class="form-check-label">Painting</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="school" id="school">
+                                                            <label for="school" class="form-check-label">School</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="coding" id="coding">
+                                                            <label for="coding" class="form-check-label">Coding</label>
+                                                        </ul>
+                                                    </div>
+    
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <ul>
+                                                            <input type="checkbox" value="feelings" id="feelings">
+                                                            <label for="feelings" class="form-check-label">Big Feelings</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="speaking" id="speaking">
+                                                            <label for="speaking" class="form-check-label">Public Speaking</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="stubborn" id="stubborn">
+                                                            <label for="stubborn" class="form-check-label">Being Stubborn</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="cooking" id="cooking">
+                                                            <label for="cooking" class="form-check-label">Cooking</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="reflection" id="reflection">
+                                                            <label for="reflection" class="form-check-label">Self Reflection</label>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <ul>
+                                                            <input type="checkbox" value="grounding" id="grounding">
+                                                            <label for="grounding" class="form-check-label">Grounding</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="sympathy" id="sympathy">
+                                                            <label for="sympathy" class="form-check-label">Sympathy</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="humor" id="humor">
+                                                            <label for="humor" class="form-check-label">Humor</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="finances" id="finances">
+                                                            <label for="finances" class="form-check-label">Finances</label>
+                                                        </ul>
+                                                        <ul>
+                                                            <input type="checkbox" value="recall" id="recall">
+                                                            <label for="recall" class="form-check-label">Information Recall</label>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+
+
+                            </div>
+
+                            <!-- row 4 : description -->
+                            <div class="row">
+                                <div class="form my-4">
+                                    <label for="description" 
+                                        class="form-label">Descriptoin of Help</label>
+                                    <textarea class="form-control" placeholder="Enter description of help here..." id="description"></textarea>
+                                  </div>
+                            </div>
+
+                            <!-- row 5 : cancel/add btn -->
+                            <div class="row mt-3">
+                                <!-- cancel meeple -->
+                                <div class="col-6">
+                                    <a href="meeples.html" class="btn btn-secondary w-100" type="button">
+                                        Cancel Meeple Creation
+                                    </a>
+                                </div>
+                                <!-- add meeple -->
+                                <div class="col-6">
+                                    <a href="meeples.html" class="btn btn-success w-100" type="button">
+                                        Add Meeple
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- edit meeple -->
+        <div class="tab-content mx-3">
+            <div id="edit" class="tab-pane fade mt-4">
+                <div class="row">
+                    <!-- filter search -->
+                    <div class="col-sm-12 col-md-3">
+                        <label for="filterSearch" 
+                        class="form-label">Filtered Search</label>
+                        <select class="form-control bg-body-secondary" 
+                        id="name">
+                            <option value="Choose">Choose...</option>
+                            <option value="Role">Role</option>
+                            <option value="Location">Location</option>
+                            <option value="Age">Age</option>
+                            <option value="Newest">Newest</option>
+                            <option value="Oldest">Oldest</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-0 col-md-6"></div>
+                    <!-- search -->
+                    <div class="col-sm-12 col-md-3">
+                        <label for="searchMeeples" 
+                        class="form-label">Search Meeples</label>
+                        <input type="text" 
+                        class="form-control bg-body-secondary" id="searchMeeples" 
+                        placeholder="Search">
+                    </div>
+                    <hr class="my-2">
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-2">
+                        <p class="fw-bold ms-5">ID</p>
+                    </div>
+                    <div class="col-sm-1 col-md-3">
+                        <p class="fw-bold">Name</p>
+                    </div>
+                    <div class="col-sm-1 col-md-2">
+                        <p class="fw-bold">Role</p>
+                    </div>
+                    <div class="col-sm-1 col-md-3">
+                        <p class="fw-bold">Location Found</p>
+                    </div>
+                    <div class="col-sm-1 col-md-2">
+                        <p class="fw-bold">Date Added</p>
+                    </div>
+                    <hr class="mb-3">
+                </div>
+                <!-- example meeple -->
+                    <!-- 1. I know this shouldn't be hard coded
+                        2. I would want to loop through it like 
+                            we did in class with the check list demo
+                            so that I could have it desplay better on mobile -->
+                <div class="row">
+                    <div class="col-sm-2 justify-content-start">
+                        <ul>
+                            <input type="radio" name="meeple-radio" id="meeple-radio"><label for="meeple-radio" class="px-3">1</label>
+                        </ul>
+                        <ul>
+                            <input type="radio" name="meeple-radio" id="meeple-radio"><label for="meeple-radio" class="px-3">2</label>
+                        </ul>
+                        <ul>
+                            <input type="radio" name="meeple-radio" id="meeple-radio"><label for="meeple-radio" class="px-3">3</label>
+                        </ul>
+                        <ul>
+                            <input type="radio" name="meeple-radio" id="meeple-radio"><label for="meeple-radio" class="px-3">4</label>
+                        </ul>
+                    </div>
+                    <div class="col-sm-1 col-md-3 fw-bold">
+                        <p>Zero</p>
+                        <p>June</p>
+                        <p>Jenny</p>
+                        <p>Alex</p>
+                    </div>
+                    <div class="col-sm-1 col-md-2">
+                        <p>Education</p>
+                        <p>Emotions</p>
+                        <p>Socialization</p>
+                        <p>Creativity</p>
+                    </div>
+                    <div class="col-sm-1 col-md-3">
+                        <p>School</p>
+                        <p>Home</p>
+                        <p>Work</p>
+                        <p>Home</p>
+                    </div>
+                    <div class="col-sm-1 col-md-2">
+                        <p>09 / 12 / 2018</p>
+                        <p>10 / 22 / 2022</p>
+                        <p>11 / 16 / 2023</p>
+                        <p>09 / 06 / 2021</p>
+                    </div>
+                </div>
+            </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    <!-- Boostrap JS -->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+        crossorigin="anonymous">
+    </script>
+</body>
+</html>

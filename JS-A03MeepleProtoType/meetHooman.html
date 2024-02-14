@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeple | Meet Hooman</title>
+
+    <!-- Bootstrap CSS -->
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+    crossorigin="anonymous">
+
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- meetHooman css -->
+    <link rel="stylesheet" href="meetHooman.css" />
+</head>
+<body>
+
+    <!-- Nav Bar-->
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #A49494;">
+        <div class="container">
+            <!-- Meeple Logo -->
+            <a href="index.html" class="navbar-brand h1">
+                <img class="d-inline-block align-top"
+                    src="media/meepleLogo.png" 
+                    height="50" width="50" />
+            </a>
+            <button 
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" 
+                class="navbar-toggler"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+                <span class="navbar-toggle-icon"></span>
+            </button>
+            <div 
+            class="collapse navbar-collapse justify-content-end" 
+            id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link px-4">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="meetHooman.html" class="nav-link active px-4"> 
+                            Meet Hooman
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="meeples.html" class="nav-link px-4"> 
+                            Meeples
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="logIn.html" class="nav-link px-4"> 
+                            Log In
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hooman Pic and Description Info -->
+    <div class="container my-4">
+        <div class="col">
+            <img src="media/meepleLogo.png" class="rounded float-start bg-dark me-5 mt-1"
+            height="200" width="200" />
+        </div>
+        <div class="col">
+            <div class="container" style="max-width: 80000px; max-height: 19rem;">
+                <div class="container-header fs-2">This is Hooman...</div>
+                <div class="container-body fs-5 mt-3">
+                    <p>Hooman is a unique individual. However, their uniqueness makes them that much more special! Hooman, has different parts of themselves called *MEEPLES*!</p> 
+                    <p></p>
+                    <p>These Meeples help Hooman do and manage daily tasks. So we need to make keeping track of meeples easy peasy!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- tabs and their info -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <!-- tabs view/add-->
+                    <ul class="nav nav-tabs mt-5">
+                        <div class="col-6">
+                            <li class="nav-item"><a class="nav-link fs-4 fw-bold active" href="#view" data-bs-toggle="tab">View Entries</a></li>
+                        </div>
+                        <div class="col-6">
+                        <li class="nav-item"><a class="nav-link fs-4 fw-bold" href="#add" data-bs-toggle="tab">Add Entry</a></li>
+                        </div>
+                    </ul>
+
+                    <!-- view entries-->
+                    <div class="tab-content mx-3">
+                        <div id="view" class="active tab-pane fade in show mt-4">
+                            <div class="row">
+                                <div class="col-1">
+                                    <!-- help btn -->                                    
+                                    <button type="button" class="btn pt-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <img class="d-inline-block mt-0"
+                                            src="media/question.png" 
+                                            height="25" width="25" />
+                                    </button>
+                                </div>    
+                                <div class="col-sm-1">
+                                    <p class="fw-bold">ID</p>
+                                </div>
+                                <div class="col-sm-1 col-md-2">
+                                    <p class="fw-bold">Date</p>
+                                </div>
+                                <div class="col-sm-1 col-md-2">
+                                    <p class="fw-bold">Name</p>
+                                </div>
+                                <div class="col-sm-1 col-md-2">
+                                    <p class="fw-bold">Helpfulness</p>
+                                </div>
+                                <div class="col-sm-1 col-md-4">
+                                    <p class="fw-bold">Title</p>
+                                </div>
+                                <hr class="mb-3">
+                            </div>
+                            
+                            <!-- example entry -->
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <p></p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p>1</p>
+                                    <p>2</p>
+                                </div>
+                                <div class="col-sm-1 col-md-2">
+                                    <p>02 / 12 / 2024</p>
+                                    <p>02 / 12 / 2024</p>
+                                </div>
+                                <div class="col-sm-1 col-md-2">
+                                    <p>Zero</p>
+                                    <p>Jenny</p>
+                                </div>
+                                <div class="col-sm-1 col-md-2">
+                                    <p>5/5 Stars</p>
+                                    <p>2/5 Stars</p>
+                                </div>
+                                <div class="col-sm-1 col-md-4">
+                                    <p>Helped With JS2 Homework</p>
+                                    <p>Got Sad Over JS2 Homework</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- add entry -->
+                    <div class="tab-content mx-3">
+                        <div id="add" class="tab-pane fade mt-4">
+                            <!-- row 1 : help btn, title -->
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <!-- help btn -->                                    
+                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <img class="d-inline-block align-top"
+                                            src="media/question.png" 
+                                            height="25" width="25" />
+                                    </button>                                  
+                                </div>
+            
+                                <!-- entry title -->
+                                <div class="col-sm-11">
+                                    <label for="entryTitle" 
+                                    class="form-label">Entry Title</label>
+                                    <input type="text" 
+                                    class="form-control bg-body-secondary" id="entryTitle" 
+                                    placeholder="Enter Title Here" required>
+                                </div>
+                            </div>
+
+                            <!-- row 2 : who helped, date, helfulness-->
+                            <div class="row">
+                                <!-- who helped? -->
+                                <div class="col-md-4 mt-3">
+                                    <label for="name" 
+                                    class="form-label">Who Helped?</label>
+                                    <select class="form-control bg-body-secondary" 
+                                    id="name">
+                                        <option value="Choose">Choose...</option>
+                                        <option value="Alex">Alex</option>
+                                        <option value="Alice">Alice</option>
+                                        <option value="Jenny">Jenny</option>                                        
+                                        <option value="Jon">Jon</option>
+                                        <option value="June">June</option>
+                                        <option value="Zero">Zero</option>
+                                    </select>
+
+                                    <div class="invalid-feedback">
+                                        Valid country is requiered.
+                                    </div>
+                                </div>
+
+                                <!-- Date of Help -->
+                                <div class="col-md-4 mt-3">
+                                    <label for="date" 
+                                    class="form-label">Date of Help </label>
+                                    <div class="input-group date" id="datepicker">
+                                        <input type="text" class="form-control bg-body-secondary" placeholder="01/16/1998" required>
+                                        <span class="input-group-append">
+                                            <span class="input-group-text bg-white d-block">
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                        </span>
+                                        <div class="invalid-feedback">
+                                            Valid birthday is requiered.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- helpfulness -->
+                                <div class="col-md-4 mt-2">
+                                    <label for="helpfulness" 
+                                    class="form-label pt-2">Level of Helpfulness</label>
+                                    <!-- rating starts -->
+                                    <div class="rating-css">
+                                        <div class="star-icon">
+                                            <input type="radio" name="rating1" id="rating1">
+                                            <label for="rating1" class="fa fa-star pe-3"></label>
+    
+                                            <input type="radio" name="rating2" id="rating2">
+                                            <label for="rating2" class="fa fa-star pe-2"></label>
+                                            
+                                            <input type="radio" name="rating3" id="rating3">
+                                            <label for="rating3" class="fa fa-star pe-2"></label>
+    
+                                            <input type="radio" name="rating4" id="rating4">
+                                            <label for="rating4" class="fa fa-star pe-2"></label>
+    
+                                            <input type="radio" name="rating5" id="rating5">
+                                            <label for="rating5" class="fa fa-star pe-2"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- row 3 : entry description -->
+                            <div class="row">
+                                <div class="form my-2">
+                                    <label for="description" 
+                                        class="form-label">Descriptoin of Help</label>
+                                    <textarea class="form-control" placeholder="Enter description of help here..." id="description"></textarea>
+                                  </div>
+                            </div>
+
+                            <!-- row 4 : cancel/add btn-->
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <!-- cancel entry -->
+                                    <a href="meetHooman.html" class="btn btn-light w-100" type="button">
+                                        Cancel Entry
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <!-- cancel -->
+                                    <a href="meetHooman.html" class="btn btn-success w-100" type="button">
+                                        Add Entry
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- entry? modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">What's An Entry??</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <p>An *entry* allows us to make sure that we keep track of the Meeples and their actions.</p>
+                        <p>This allows Hooman to give proper thanks for tasks that they help with!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-block" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    
+    <!-- Boostrap JS -->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+        crossorigin="anonymous">
+    </script>
+
+    <script src="meetHooman.js" type="application/javascript"></script>
+</body>
+</html>
